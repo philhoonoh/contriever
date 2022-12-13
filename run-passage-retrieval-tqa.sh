@@ -9,17 +9,18 @@ for data in ${dataArray[@]}; do
     --model_name_or_path facebook/contriever-msmarco \
     --passages /data/philhoon-relevance/FiD/open_domain_data/wikipedia_psgs/psgs_w100.tsv \
     --passages_embeddings "/data/philhoon-relevance/contriever/wikipedia_embeddings/contriever_msmacro/wikipedia_embeddings/*" \
-    --data /data/philhoon-relevance/FiD/open_domain_data/NQ/"$dataset" \
-    --output_dir /data/philhoon-relevance/contriever/NQ/contriever-msmarco/ \
+    --data /data/philhoon-relevance/FiD/open_domain_data/TQA/"$dataset" \
+    --output_dir /data/philhoon-relevance/contriever/TQA/contriever-msmarco \
     --per_gpu_batch_size 256
   "
   CUDA_VISIBLE_DEVICES=5 python passage_retrieval.py \
   --model_name_or_path facebook/contriever-msmarco \
   --passages /data/philhoon-relevance/FiD/open_domain_data/wikipedia_psgs/psgs_w100.tsv \
   --passages_embeddings "/data/philhoon-relevance/contriever/wikipedia_embeddings/contriever_msmacro/wikipedia_embeddings/*" \
-  --data /data/philhoon-relevance/FiD/open_domain_data/NQ/"$dataset" \
-  --output_dir /data/philhoon-relevance/contriever/NQ/contriever-msmarco/ \
+  --data /data/philhoon-relevance/FiD/open_domain_data/TQA/"$dataset" \
+  --output_dir /data/philhoon-relevance/contriever/TQA/contriever-msmarco \
   --per_gpu_batch_size 256
+  
 done
 
 #python passage_retrieval.py \
