@@ -5,7 +5,7 @@ dataArray=("test")
 for data in ${dataArray[@]}; do
   dataset="${data}.json"
 
-  echo "CUDA_VISIBLE_DEVICES=1 python passage_retrieval.py \
+  echo "CUDA_VISIBLE_DEVICES=5 python passage_retrieval.py \
     --model_name_or_path facebook/contriever-msmarco \
     --passages /data/philhoon-relevance/FiD/open_domain_data/wikipedia_psgs/psgs_w100.tsv \
     --passages_embeddings "/data/philhoon-relevance/contriever/wikipedia_embeddings/contriever_msmacro/wikipedia_embeddings/*" \
@@ -13,7 +13,7 @@ for data in ${dataArray[@]}; do
     --output_dir /data/philhoon-relevance/contriever/contriever_testing \
     --per_gpu_batch_size 256
   "
-  CUDA_VISIBLE_DEVICES=1 python passage_retrieval.py \
+  CUDA_VISIBLE_DEVICES=5 python passage_retrieval.py \
   --model_name_or_path facebook/contriever-msmarco \
   --passages /data/philhoon-relevance/FiD/open_domain_data/wikipedia_psgs/psgs_w100.tsv \
   --passages_embeddings "/data/philhoon-relevance/contriever/wikipedia_embeddings/contriever_msmacro/wikipedia_embeddings/*" \
